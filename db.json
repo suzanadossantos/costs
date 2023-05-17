@@ -21,39 +21,6 @@
       "cost": 0,
       "services": [],
       "id": 2
-    },
-    {
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "name": "Outro projeto",
-      "budget": "8000",
-      "cost": 0,
-      "services": [],
-      "id": 3
-    },
-    {
-      "name": "Teste",
-      "budget": "3000",
-      "category": {
-        "id": "3",
-        "name": "Design"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 4
-    },
-    {
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "name": "Teste",
-      "budget": "12000",
-      "cost": 0,
-      "services": [],
-      "id": 5
     }
   ],
   "categories": [

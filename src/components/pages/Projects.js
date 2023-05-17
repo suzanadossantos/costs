@@ -12,6 +12,7 @@ import styles from './Projects.module.css'
 function Projects() {
   const [projects, setProjects] = useState([])
   const [removeLoading, setRemoveLoading] = useState(false)
+  const [projectMessage, setProjectsMessage] = useState('')
 
   const location = useLocation()
   let message = ''
@@ -36,6 +37,21 @@ function Projects() {
     }, 300)
   }, [])
 
+  function removeProject(id){
+    fetch(`http://localhost:5000/projects/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    })
+    .then(resp => resp.json())
+    .then(() => {
+      setProjects(projects.filter((project) => project.id !== id))
+      setProjectsMessage('Projeto removido com sucesso!')
+    })
+    .catch(err => console.log(err))  
+  }
+
   return (
     <div className={styles.project_container}>
       <div className={styles.title_container}>
@@ -43,14 +59,17 @@ function Projects() {
         <LinkButton to="/newproject" text="Criar Projeto" />
       </div>
       {message && <Message type="success" msg= {message}/>}
+      {projectMessage && <Message type="success" msg= {projectMessage}/>}
       <Container customClass="start">
-        {projects.length > 0 && projects.map((project) => <ProjectCard 
+        {projects.length > 0 && projects.map((project) => ( <ProjectCard 
         id={project.id}
         name={project.name} 
         budget={project.budget}
         category={project?.category?.name}
         key={project.id}
-        />)}
+        handleRemove={removeProject}
+        />
+        ))}
         {!removeLoading && <Loading /> }
         {removeLoading && projects.length === 0 && (
           <p>Não há projetos cadastrados</p>
