@@ -13,11 +13,11 @@
     },
     {
       "category": {
-        "id": "1",
-        "name": "Infra"
+        "id": "3",
+        "name": "Design"
       },
-      "name": "Projeto 2",
-      "budget": "2000",
+      "name": "Projeto 2 atualizado",
+      "budget": "2050",
       "cost": 0,
       "services": [],
       "id": 2
