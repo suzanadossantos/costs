@@ -2,10 +2,16 @@
     padding: 2em;
 }
 
+.project_details div{
+    display: flex;
+    flex-direction: column;
+}
+
 .project_details h1,
 .project_details h2,
 .project_details p{
     margin-bottom: 0.5em;
+    width: 20em;
 }
 
 .project_details h1{
@@ -36,13 +42,15 @@
     transition: 0.5s;
     cursor: pointer;
     max-height: 40px;
+    width: 15em;
     border: none;
+    margin: 10px 0px;
 }
 
 .btn:hover{
     color: #FFBB33;
 }
 
-.project_info{
+.form{
     width: 100%;
 }
