@@ -1,6 +1,8 @@
 .navbar{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #222;
     padding: 1em;
 }
@@ -22,4 +24,19 @@
 
 .item a:hover{
     color: #FFBB33;
+}
+
+@media screen and (min-width: 600px){
+    .list{
+        display: flex;
+        list-style: none;
+        align-items: center;
+    }
+
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        background-color: #222;
+        padding: 1em;
+    }
 }
